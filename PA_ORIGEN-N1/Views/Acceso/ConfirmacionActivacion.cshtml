@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Cuenta activada";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5 text-center">
+    <h2 class="text-primary">¡Cuenta verificada!</h2>
+    <p>@ViewBag.Mensaje</p>
+    <a href="@Url.Action("Login", "Acceso")" class="btn btn-success mt-3">Iniciar sesión</a>
+</div>
+

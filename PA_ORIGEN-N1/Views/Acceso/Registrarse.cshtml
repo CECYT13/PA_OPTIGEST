@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Registrarse";
+    Layout = "_Layout";
+}
+
+<div class="container mt-5" style="max-width: 500px;">
+    <div class="card shadow rounded-4 border-0">
+        <div class="card-header text-white text-center" style="background-color: #2d6a4f;">
+            <h4 class="mb-0">Crear una cuenta</h4>
+        </div>
+        <div class="card-body p-4">
+            <form asp-action="Registrarse" asp-controller="Acceso" method="post">
+                <div class="mb-3">
+                    <label for="correo" class="form-label">Correo electrónico</label>
+                    <input type="email" name="correo" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre completo</label>
+                    <input type="text" name="nombre" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label for="contraseña" class="form-label">Contraseña</label>
+                    <input type="password" name="contraseña" class="form-control" required />
+                </div>
+
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger text-center">
+                        @ViewBag.Error
+                    </div>
+                }
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn text-white" style="background-color: #40916c;">Registrarse</button>
+                    <a href="/" class="btn btn-outline-secondary">Volver al inicio</a>
+                </div>
+            </form>
+
+            <div class="text-center mt-3">
+                ¿Ya tienes una cuenta? <a href="/Acceso/Login">Inicia sesión aquí</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

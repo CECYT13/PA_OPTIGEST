@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Error";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5 text-center">
+    <h2 class="text-danger">Error</h2>
+    <p>@ViewBag.Error</p>
+    <a href="@Url.Action("Index", "Acceso")" class="btn btn-outline-secondary mt-3">Volver al inicio</a>
+</div>
+

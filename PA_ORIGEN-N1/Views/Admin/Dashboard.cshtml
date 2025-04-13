@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Panel del Administrador";
+    Context.Response.Headers["Cache-Control"] = "no-cache, no-store, must-revalidate";
+    Context.Response.Headers["Pragma"] = "no-cache";
+    Context.Response.Headers["Expires"] = "0";
+}
+
+<div class="container mt-5">
+    <div class="card shadow border-0">
+        <div class="card-header bg-success text-white">
+            <h4 class="mb-0">Panel del Administrador</h4>
+        </div>
+        <div class="card-body">
+            <p class="lead mb-4">Bienvenido al panel de administración. Desde aquí puedes gestionar recursos del sistema.</p>
+            <p>Tu rol actual es: @User.FindFirst("Rol")?.Value</p>
+
+            <div class="row g-4">
+
+                <!-- Crear Empleados -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">👨‍💼 Crear Empleados</h5>
+                            <p class="card-text">Agregar nuevos empleados al sistema.</p>
+                            <a asp-action="CrearEmpleado" asp-controller="Admin" class="btn btn-outline-primary">Ir a Crear</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ver reportes o estadísticas -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">📊 Reportes / Estadísticas</h5>
+                            <p class="card-text">Visualizar métricas del sistema (próximamente).</p>
+                            <button class="btn btn-outline-secondary" disabled>Próximamente</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gestión de ventas, almacén -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">🧾 Ventas y Almacén</h5>
+                            <p class="card-text">Módulo para registrar ventas y controlar stock.</p>
+                            <button class="btn btn-outline-secondary" disabled>Próximamente</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+

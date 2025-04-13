@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Panel del Usuario Master";
+    Context.Response.Headers["Cache-Control"] = "no-cache, no-store, must-revalidate";
+    Context.Response.Headers["Pragma"] = "no-cache";
+    Context.Response.Headers["Expires"] = "0";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Panel del Usuario Master</h4>
+        </div>
+        <div class="card-body">
+            <p class="lead">Bienvenido, desde aquí puedes crear cuentas con rol <strong>Administrador</strong>.</p>
+
+            <a class="btn btn-outline-primary" asp-action="CrearAdministrador" asp-controller="Master">
+                <i class="bi bi-person-plus"></i> Crear Administrador
+            </a>
+
+            @if (TempData["Mensaje"] != null)
+            {
+                <div class="alert alert-success mt-4">
+                    @TempData["Mensaje"]
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
